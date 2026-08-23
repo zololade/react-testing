@@ -1,9 +1,8 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc", "vitest"],
+  "plugins": ["react", "typescript", "oxc", "vitest", "import"],
   "categories": {
-    "correctness": "error",
-    "suspicious": "warn"
+    "correctness": "error"
   },
   "rules": {
     "react/rules-of-hooks": "error",

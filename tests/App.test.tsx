@@ -1,11 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { render, screen } from "@testing-library/react";
 
-describe("something truthy and falsy", () => {
-  it("true to be true", () => {
-    expect(true).toBe(true);
-  });
+import { App } from "../src/App";
 
-  it("false to be false", () => {
-    expect(false).toBe(false);
+describe("App", () => {
+  it("renders headline", () => {
+    render(<App title="React" />);
+
+    screen.debug();
   });
 });

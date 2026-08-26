@@ -1,11 +1,19 @@
 import { render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event";
+import { type ReactNode } from "react";
 
 import { App } from "../src/App";
 
-describe("App", () => {
-  it("renders headline", () => {
-    render(<App title="React" />);
+function setup(jsx: ReactNode) {
+  return {
+    user: userEvent.setup(),
+    ...render(jsx),
+  };
+}
 
-    screen.debug();
+describe("App", () => {
+  test("render h1 element", () => {
+    setup(<App />);
+    expect(screen.getByRole("heading", { name: /hello world/i, level: 1 })).toBeInTheDocument();
   });
 });

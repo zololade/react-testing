@@ -1,9 +1,9 @@
-interface Prop {
-  title: string;
-}
-
-function App({ title }: Prop) {
-  return <h1>Hello {title}</h1>;
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
 }
 
 export { App };

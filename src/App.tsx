@@ -1,26 +1,28 @@
-import { useState, type ChangeEvent, type ChangeEventHandler } from "react";
-
-function Input({
-  handleChange,
-  inputValue,
-}: {
-  handleChange: ChangeEventHandler;
-  inputValue: string;
-}) {
-  return <input type="text" onChange={handleChange} value={inputValue} />;
-}
-
-function App() {
-  const [inputValue, setInputValue] = useState("");
-
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    setInputValue(e.target.value);
-  }
+const Profile = () => {
   return (
     <div>
-      <h1>{inputValue}</h1>
-      <Input handleChange={handleChange} inputValue={inputValue} />
+      <h1>Hello from profile page!</h1>
+      <p>So, how are you?</p>
     </div>
   );
-}
-export { App, Input };
+};
+
+export default Profile;
+
+const App = () => {
+  return (
+    <div>
+      <h1>Hello from the main page of the app!</h1>
+      <p>Here are some examples of links to other pages</p>
+      <nav>
+        <ul>
+          <li>
+            <a href="profile">Profile page</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
+export { App, Profile };

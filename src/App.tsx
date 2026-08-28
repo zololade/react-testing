@@ -1,13 +1,38 @@
+import { Link, Outlet } from "react-router";
+
 const Profile = () => {
   return (
     <div>
       <h1>Hello from profile page!</h1>
       <p>So, how are you?</p>
+      <hr />
+      <h2>The profile visited is here:</h2>
+      <Outlet />
     </div>
   );
 };
 
-export default Profile;
+const DefaultProfile = () => {
+  return <p>Oh, nothing to see here!</p>;
+};
+
+const Popeye = () => {
+  return (
+    <>
+      <p>Hi, I am Popeye! I love to eat Spinach!</p>
+      <Link to="/">Click here to go back</Link>
+    </>
+  );
+};
+
+const Spinach = () => {
+  return (
+    <>
+      <p>Hi, I am Spinach! Popeye loves to eat me!</p>
+      <Link to="/">Click here to go back</Link>
+    </>
+  );
+};
 
 const App = () => {
   return (
@@ -25,4 +50,4 @@ const App = () => {
   );
 };
 
-export { App, Profile };
+export { App, DefaultProfile, Popeye, Profile, Spinach };
